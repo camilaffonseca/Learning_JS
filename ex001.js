@@ -30,4 +30,3 @@ for (let c = 0; c < input.length; c++) {
     }
   }
 }
-
