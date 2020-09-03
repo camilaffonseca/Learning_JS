@@ -4,35 +4,29 @@ parênteses. Seu aplicativo deverá analisar se a expressão passada está
 com os parênteses abertos e fechados na ordem correta
 */
 
-
-let lista_arm = []
-
+let pilhaParenteses = []
 let input = '()'
 
 const verificarResultado = lista => {
-    if(lista.length){
-        console.log('Inválida')
+  if (lista.length) {
+    console.log('Inválida')
+  } else {
+    console.log('Válida!')
+  }
+}
+
+for (let c = 0; c < input.length; c++) {
+  if (input[c] === '(') {
+    pilhaParenteses.push(input[c])
+  } else if (input[c] === ')') {
+    if (pilhaParenteses.length) {
+      pilhaParenteses.pop()
+
+      const valid = c + 1 === input.length && verificarResultado(pilhaParenteses)
     } else {
-        console.log('Válida!')
+      pilhaParenteses.push(input[c])
+      verificarResultado(pilhaParenteses)
+      break
     }
+  }
 }
-
-for(let c = 0; c < input.length; c++){
-    if (input[c] == '('){
-        lista_arm.push(input[c])
-    } else if (input[c] == ')'){
-        if(lista_arm.length){
-            lista_arm.pop()
-            if(c + 1 === input.length) {
-                verificarResultado(lista_arm)
-            }
-        } else {
-            lista_arm.push(input[c])
-            verificarResultado(lista_arm)
-            break
-        }
-    }
-}
-
-
-lista.sort()
