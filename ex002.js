@@ -5,10 +5,10 @@ pares e os valores ímpares digitados, respectivamente. Ao final, mostre
 o conteúdo das três listas geradas.
 */
 
-let inputNumeros = [1, 6, 0, 34, 2, 107]
+const inputNumeros = [1, 6, 0, 34, 2, 107]
 
-let numerosPares = []
-let numerosImpares = []
+const numerosPares = []
+const numerosImpares = []
 
 inputNumeros.forEach(element => {
   if (element % 2 == 0) {
@@ -18,8 +18,8 @@ inputNumeros.forEach(element => {
   }
 })
 
-console.log(
-  `Números: ${inputNumeros.join(' | ')}`,
-  `\nNúmeros Pares: ${numerosPares.join(' | ')}`,
-  `\nNúmeros Ímpares: ${numerosImpares.join(' | ')}`
-)
+console.log(`
+Números: ${inputNumeros.join(' | ')}
+Números Pares: ${numerosPares.join(' | ')}
+Números Ímpares: ${numerosImpares.join(' | ')}
+`)
